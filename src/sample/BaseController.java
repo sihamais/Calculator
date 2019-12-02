@@ -12,76 +12,76 @@ import java.util.ResourceBundle;
 public class BaseController implements Initializable {
 
     @FXML
-    private JFXButton bouton_percent;
+    protected JFXButton bouton_percent;
 
     @FXML
-    private JFXButton bouton_suppr;
+    protected JFXButton bouton_suppr;
 
     @FXML
-    private JFXButton bouton_nine;
+    protected JFXButton bouton_nine;
 
     @FXML
-    private JFXButton bouton_four;
+    protected JFXButton bouton_four;
 
     @FXML
-    private JFXButton bouton_one;
+    protected JFXButton bouton_one;
 
     @FXML
-    private JFXButton bouton_zero;
+    protected JFXButton bouton_zero;
 
     @FXML
-    private JFXButton bouton_eight;
+    protected JFXButton bouton_eight;
 
     @FXML
-    private JFXButton bouton_five;
+    protected JFXButton bouton_five;
 
     @FXML
-    private JFXButton bouton_equal;
+    protected JFXButton bouton_equal;
 
     @FXML
-    private JFXButton bouton_virgule;
+    protected JFXButton bouton_virgule;
 
     @FXML
-    private JFXButton bouton_add;
+    protected JFXButton bouton_add;
 
     @FXML
-    private JFXButton bouton_three;
+    protected JFXButton bouton_three;
 
     @FXML
-    private JFXButton bouton_minus;
+    protected JFXButton bouton_minus;
 
     @FXML
-    private JFXButton bouton_six;
+    protected JFXButton bouton_six;
 
     @FXML
-    private JFXButton bouton_mult;
+    protected JFXButton bouton_mult;
 
     @FXML
-    private JFXButton bouton_seven;
+    protected JFXButton bouton_seven;
 
     @FXML
-    private JFXButton bouton_div;
+    protected JFXButton bouton_div;
 
     @FXML
-    private JFXButton clear;
+    protected JFXButton clear;
 
     @FXML
-    private JFXButton bouton_two;
+    protected JFXButton bouton_two;
 
     @FXML
-    private JFXButton bouton_plusMoins;
+    protected JFXButton bouton_plusMoins;
 
     @FXML
-    private TextField champ_view;
+    protected TextField champ_view;
 
     @FXML
-    private TextField historique_view;
+    protected TextField historique_view;
 
 
-    private double result;
-    private double nombre_temp1;
-    private double nombre_temp2;
-    private String operateur;
+    protected double result;
+    protected double nombre_temp1;
+    protected double nombre_temp2;
+    protected String operateur;
     Boolean status_champ = false;
 
     @FXML
