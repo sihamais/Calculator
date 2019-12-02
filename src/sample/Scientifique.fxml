@@ -132,12 +132,12 @@
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_xp3" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="x^3" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <JFXButton fx:id="bouton_xp3" onAction="#bouton_xp3_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="x^3" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_octal" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="octal" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
+            <JFXButton fx:id="bouton_octal" onAction="#bouton_octal_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="octal" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
@@ -152,87 +152,87 @@
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_bin" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="binary" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2">
+            <JFXButton fx:id="bouton_bin" onAction="#bouton_bin_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="binary" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_decimal" onAction="#bouton_clear_click" prefHeight="109.0" prefWidth="87.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="decimal" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3">
+            <JFXButton fx:id="bouton_decimal" onAction="#bouton_decimal_click" prefHeight="109.0" prefWidth="87.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="decimal" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_xpy" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="x^y" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <JFXButton fx:id="bouton_xpy" onAction="#bouton_xpy_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="x^y" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_10px" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="10^x" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <JFXButton fx:id="bouton_10px" onAction="#bouton_10px_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="10^x" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_xor" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="XOR" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <JFXButton fx:id="bouton_xor" onAction="#bouton_xor_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="XOR" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_nor" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="NOR" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <JFXButton fx:id="bouton_nor" onAction="#bouton_nor_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="NOR" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_or" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="OR" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <JFXButton fx:id="bouton_or" onAction="#bouton_or_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="OR" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_and" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="AND" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
+            <JFXButton fx:id="bouton_and" onAction="#bouton_and_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="AND" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_pi" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="π" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <JFXButton fx:id="bouton_pi" onAction="#bouton_pi_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="π" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_tan" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="tan" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <JFXButton fx:id="bouton_tan" onAction="#bouton_tan_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="tan" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_cos" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="cos" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <JFXButton fx:id="bouton_cos" onAction="#bouton_cos_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="cos" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_sin" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="sin" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+            <JFXButton fx:id="bouton_sin" onAction="#bouton_sin_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="sin" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_factoriel" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="x!" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+            <JFXButton fx:id="bouton_factoriel" onAction="#bouton_factoriel_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="x!" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_racine3" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="3√x" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <JFXButton fx:id="bouton_racine3" onAction="#bouton_racine3_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="3√x" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_racine2" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text=" √x" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <JFXButton fx:id="bouton_racine2" onAction="#bouton_racine2_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text=" √x" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_1surx" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="1/X" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <JFXButton fx:id="bouton_1surx" onAction="#bouton_1surx_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C;" text="1/X" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_hexa" onAction="#bouton_clear_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C; " text="hexa" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="bouton_hexa" onAction="#bouton_hexa_click" prefHeight="166.0" prefWidth="201.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #48484C; " text="hexa" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>

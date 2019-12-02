@@ -310,7 +310,7 @@ public class AdvancedController extends BaseController{
     }
 
 //    @FXML
-//    public void bouton_binaire_click(ActionEvent event) {
+//    public void bouton_bin_click(ActionEvent event) {
 //
 //        if (event.getSource() == bouton_bin) {
 //            if(champ_view.getText() == "")

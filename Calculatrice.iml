@@ -19,5 +19,10 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jfoenix-0.0.0-SNAPSHOT-retrolambda" level="application" />
+    <orderEntry type="library" name="openjfx-11.0.2_osx-x64_bin-sdk" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="jfoenix-0.0.0-SNAPSHOT-retrolambda1" level="project" />
+    <orderEntry type="library" name="java" level="project" />
   </component>
 </module>
