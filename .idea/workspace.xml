@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculatrice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculatrice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculatrice/sample/Calculatrice.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculatrice/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculatrice/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculatrice/sample/Programme.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculatrice/src/sample/Calculatrice.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Calculatrice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CalculatriceBase.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Programme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/AdvancedController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="238">
               <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,16 +89,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/BaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="315" column="37" selection-start-line="315" selection-start-column="37" selection-end-line="315" selection-end-column="37" />
+            <state>
+              <caret column="15" lean-forward="true" selection-end-line="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/AdvancedController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/graphique.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-end-line="147" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Scientifique.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Simple.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -164,6 +187,7 @@
         <option value="$PROJECT_DIR$/src/sample/Calculatrice.fxml" />
         <option value="$PROJECT_DIR$/src/module-info.java" />
         <option value="$PROJECT_DIR$/src/sample/CalculatriceBase.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/AdvancedController.java" />
       </list>
     </option>
   </component>
@@ -177,47 +201,11 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <showMembers Scope="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
-          <expand>
-            <path>
-              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="C:\Users\andim\IdeaProjects\calculatrice-graphique-java" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="C:\Users\andim\IdeaProjects\calculatrice-graphique-java" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="C:\Users\andim\IdeaProjects\calculatrice-graphique-java" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="C:\Users\andim\IdeaProjects\calculatrice-graphique-java" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="sample" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,6 +223,45 @@
               <item name="calculatrice-graphique-java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
+            <path>
+              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="C:\Users\andim\IdeaProjects\calculatrice-graphique-java" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="C:\Users\andim\IdeaProjects\calculatrice-graphique-java" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="calculatrice-graphique-java" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Calculatrice" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="C:\Users\andim\IdeaProjects\calculatrice-graphique-java" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sample" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -378,16 +405,18 @@
       <workItem from="1574883930404" duration="1119000" />
       <workItem from="1574982068954" duration="651000" />
       <workItem from="1575306243937" duration="309000" />
+      <workItem from="1575306582139" duration="459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64665000" />
+    <option name="totallyTimeSpent" value="65124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="1013" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1574383" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1574383" />
       <window_info id="Structure" order="1" weight="0.24945295" />
       <window_info id="Favorites" order="2" weight="0.32932165" />
       <window_info id="Designer" order="3" />
@@ -411,7 +440,7 @@
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32809225" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="16" visible="true" weight="0.2950276" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="16" visible="true" weight="0.2950276" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -467,14 +496,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controls.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/graphique.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-end-line="147" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/OneDrive/Bureau/Mes Projets/POO2/Bibliothèque JavaFX/javafx-sdk-13.0.1/lib/src.zip!/javafx.graphics/javafx/application/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -492,19 +513,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="238">
           <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/CalculatriceBase.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -522,13 +535,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Scientifique.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Simple.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/CalculatriceBase.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/graphique.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="315" column="37" selection-start-line="315" selection-start-column="37" selection-end-line="315" selection-end-column="37" />
+        <state>
+          <caret column="15" lean-forward="true" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/AdvancedController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
