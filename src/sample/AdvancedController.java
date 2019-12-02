@@ -70,6 +70,14 @@ public class AdvancedController extends BaseController{
     @FXML
     private JFXButton bouton_xor;
 
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+
     @FXML
     public void bouton_xp2_click(ActionEvent event) {
 
