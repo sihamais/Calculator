@@ -82,17 +82,20 @@ public class BaseController implements Initializable {
     private double nombre_temp1;
     private double nombre_temp2;
     private String operateur;
-    Boolean status = false;
+    Boolean status_champ = false;
 
     @FXML
     public void bouton_one_click(ActionEvent event) {
 
         if (event.getSource() == bouton_one) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "1"));
             else
+            {
                 champ_view.setText("1");
+                status_champ = false;
+            }
         }
     }
 
@@ -117,10 +120,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_two) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "2"));
             else
+            {
                 champ_view.setText("2");
+                status_champ = false;
+            }
         }
     }
 
@@ -129,10 +135,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_three) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "3"));
             else
+            {
                 champ_view.setText("3");
+                status_champ = false;
+            }
         }
     }
 
@@ -141,10 +150,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_four) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "4"));
             else
+            {
                 champ_view.setText("4");
+                status_champ = false;
+            }
         }
     }
 
@@ -153,10 +165,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_five) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "5"));
             else
+            {
                 champ_view.setText("5");
+                status_champ = false;
+            }
         }
     }
 
@@ -165,10 +180,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_six) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "6"));
             else
+            {
                 champ_view.setText("6");
+                status_champ = false;
+            }
         }
     }
 
@@ -177,10 +195,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_seven) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "7"));
             else
+            {
                 champ_view.setText("7");
+                status_champ = false;
+            }
         }
     }
 
@@ -189,10 +210,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_eight) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "8"));
             else
+            {
                 champ_view.setText("8");
+                status_champ = false;
+            }
         }
     }
 
@@ -201,10 +225,13 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_nine) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "9"));
             else
+            {
                 champ_view.setText("9");
+                status_champ = false;
+            }
         }
     }
 
@@ -213,7 +240,7 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_zero) {
             champ_view.setPromptText("");
-            if(!status)
+            if(!status_champ)
                 champ_view.setText((champ_view.getText() + "0"));
             else
                 champ_view.setText("0");
@@ -225,7 +252,7 @@ public class BaseController implements Initializable {
 
         if (event.getSource() == bouton_virgule) {
             champ_view.setPromptText("");
-            if (!status) {
+            if (!status_champ) {
                 if (champ_view.getText() == "")
                     champ_view.setText("0,");
                 else
@@ -234,21 +261,21 @@ public class BaseController implements Initializable {
                 if (champ_view.getText() == "")
                     champ_view.setText("0,");
                 else
-                {champ_view.setText((champ_view.getText() + ",")); status=false;}
+                {champ_view.setText((champ_view.getText() + ",")); status_champ=false;}
             }
         }
     }
 
     @FXML
     public void bouton_mult_click() {
-        nombre_temp1 = Double.valueOf(champ_view.getText());
+        nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
         operateur = "*";
         champ_view.setText("");
     }
     @FXML
     public void bouton_add_click() {
        try {
-           nombre_temp1 = Double.parseDouble(champ_view.getText());
+           nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
            operateur = "+";
            champ_view.setText("");
        }catch (NumberFormatException e){
@@ -259,14 +286,14 @@ public class BaseController implements Initializable {
 
     @FXML
     public void bouton_div_click() {
-        nombre_temp1 = Double.valueOf(champ_view.getText());
+        nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
         operateur = "/";
         champ_view.setText("");
     }
 
     @FXML
     public void bouton_minus_click() {
-        nombre_temp1 = Double.valueOf(champ_view.getText());
+        nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
         operateur = "-";
         champ_view.setText("");
     }
@@ -324,31 +351,31 @@ public class BaseController implements Initializable {
 
     @FXML
     public void bouton_equal_click() {
-        nombre_temp2 = Double.valueOf(champ_view.getText());
+        nombre_temp2 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
         switch (operateur)
         {
             case "+":
                 result = nombre_temp1 + nombre_temp2;
                 champ_view.setText(String.valueOf(result));
-                status = true;
+                status_champ = true;
                 break;
 
             case "-":
                 result = nombre_temp1 - nombre_temp2;
                 champ_view.setText(String.valueOf(result));
-                status = true;
+                status_champ = true;
                 break;
 
             case "*":
                 result = nombre_temp1 * nombre_temp2;
                 champ_view.setText(String.valueOf(result));
-                status = true;
+                status_champ = true;
                 break;
 
             case "/":
                 result = nombre_temp1 / nombre_temp2;
                 champ_view.setText(String.valueOf(result));
-                status = true;
+                status_champ = true;
                 break;
         }
     }
