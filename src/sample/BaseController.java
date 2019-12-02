@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class Programme implements Initializable {
+public class BaseController implements Initializable {
 
     @FXML
     private JFXButton bouton_percent;
