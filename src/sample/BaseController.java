@@ -1,8 +1,14 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;;
 import javafx.event.ActionEvent;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
@@ -77,6 +83,15 @@ public class BaseController implements Initializable {
     @FXML
     protected TextField historique_view;
 
+    @FXML
+    protected MenuButton bouton_menu;
+
+    @FXML
+    protected MenuItem bouton_modeScientifique;
+
+    @FXML
+    protected MenuItem bouton_quitter;
+
 
     protected double result;
     protected double nombre_temp1;
@@ -84,7 +99,16 @@ public class BaseController implements Initializable {
     protected String operateur;
     Boolean status_champ = false;
 
+
     @FXML
+    public void bouton_scientifique_click(ActionEvent event) {
+        if (event.getSource() == bouton_modeScientifique) {
+
+        }
+    }
+
+
+        @FXML
     public void bouton_one_click(ActionEvent event) {
 
         if (event.getSource() == bouton_one) {
@@ -98,6 +122,8 @@ public class BaseController implements Initializable {
             }
         }
     }
+
+
 
 
 
