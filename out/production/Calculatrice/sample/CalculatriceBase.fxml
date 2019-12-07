@@ -144,20 +144,20 @@
             </JFXButton>
          </items>
       </ToolBar>
-      <TextField editable="false" fx:id="champ_view" alignment="BASELINE_RIGHT" layoutX="6.0" layoutY="101.0" prefHeight="76.0" prefWidth="442.0" promptText="0" style="-fx-background-color: #2E2E32;">
+      <TextField editable="false" fx:id="champ_view" alignment="BASELINE_RIGHT" layoutX="6.0" layoutY="101.0" prefHeight="76.0" prefWidth="442.0" promptText="0" style="-fx-background-color: #2E2E32; -fx-text-inner-color: white;">
          <font>
             <Font name="Heiti TC Light" size="33.0" />
          </font>
       </TextField>
-      <TextField editable="false" fx:id="historique_view" alignment="BASELINE_RIGHT" layoutX="110.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="306.0" promptText="0" style="-fx-background-color: rgba(1,1,1,0);">
+      <TextField editable="false" fx:id="historique_view" alignment="BASELINE_RIGHT" layoutX="110.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="306.0" promptText="0" style="-fx-background-color: rgba(1,1,1,0); -fx-text-inner-color: white;">
          <font>
             <Font name="System Italic" size="13.0" />
          </font>
       </TextField>
       <MenuButton fx:id="bouton_menu" layoutY="1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #2E2E32;" text="Menu" textFill="WHITE">
          <items>
-            <MenuItem fx:id="bouton_modeScientifique" mnemonicParsing="false" text="Mode scientifique" />
-            <MenuItem fx:id="bouton_quitter" mnemonicParsing="false" text="Quitter" />
+            <MenuItem fx:id="bouton_modeScientifique" onAction="#changeToScientifque" mnemonicParsing="false" text="Mode scientifique" />
+            <MenuItem fx:id="bouton_quitter" mnemonicParsing="false" text="Quitter"  onAction="#quitter"/>
          </items>
       </MenuButton>
    </children>

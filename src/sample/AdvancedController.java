@@ -1,10 +1,17 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;;
 import javafx.event.ActionEvent;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import com.jfoenix.controls.JFXButton;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -608,4 +615,36 @@ public class AdvancedController extends BaseController{
                 break;
         }
     }
+
+    @FXML
+    public void changeToBase(ActionEvent e) throws IOException {
+        Parent mode_base = FXMLLoader.load(getClass().getResource("CalculatriceBase.fxml"));
+        Stage stage_base = new Stage();
+        stage_base.setTitle("Calculatrice (Mode Base)");
+        stage_base.setResizable(false);
+        stage_base.centerOnScreen();
+        stage_base.setScene(new Scene(mode_base));
+        //Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        //window.show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(100);
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            stage_base.show();
+                        }
+                    });
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+
+    }
+
 }

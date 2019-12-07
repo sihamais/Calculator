@@ -1,9 +1,13 @@
 package sample;
 
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -11,6 +15,11 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -87,10 +96,10 @@ public class BaseController implements Initializable {
     protected MenuButton bouton_menu;
 
     @FXML
-    protected MenuItem bouton_modeScientifique;
+    public MenuItem bouton_modeScientifique;
 
     @FXML
-    protected MenuItem bouton_quitter;
+    public MenuItem bouton_quitter;
 
 
     protected double result;
@@ -296,6 +305,7 @@ public class BaseController implements Initializable {
     public void bouton_mult_click() {
         nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
         operateur = "*";
+        historique_view.setText(champ_view.getText()+operateur);
         champ_view.setText("");
     }
     @FXML
@@ -395,6 +405,7 @@ public class BaseController implements Initializable {
             case "*":
                 result = nombre_temp1 * nombre_temp2;
                 champ_view.setText(String.valueOf(result));
+                historique_view.setText("="+champ_view.getText());
                 status_champ = true;
                 break;
 
@@ -406,6 +417,65 @@ public class BaseController implements Initializable {
         }
     }
 
+//    //lanceur principal
+//    @Override
+//    public void start(Stage primaryStage) throws Exception {
+//
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(1000);
+//                    Platform.runLater(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            stage_scientique.show();
+//                        }
+//                    });
+//
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
+//    }
 
 
+    @FXML
+    public void changeToScientifque(ActionEvent e) throws IOException {
+        Parent mode_scientifique = FXMLLoader.load(getClass().getResource("Scientifique.fxml"));
+        Stage stage_scientique = new Stage();
+        stage_scientique.setTitle("Calculatrice (Mode Scientifique)");
+        stage_scientique.setResizable(false);
+        stage_scientique.centerOnScreen();
+        stage_scientique.setScene(new Scene(mode_scientifique));
+
+        // stage_scientique.show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(100);
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            stage_scientique.showAndWait();
+
+                        }
+                    });
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }).start();
+
+    }
+
+    @FXML
+    public void quitter(ActionEvent e)
+    {
+        Platform.exit();
+    }
 }
