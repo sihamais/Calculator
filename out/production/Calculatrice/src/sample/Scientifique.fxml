@@ -252,8 +252,8 @@
       </TextField>
       <MenuButton fx:id="bouton_menu" layoutY="1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #2E2E32;" text="Menu" textFill="WHITE">
         <items>
-            <MenuItem fx:id="bouton_modeSimple" mnemonicParsing="false" text="Mode simple" />
-            <MenuItem fx:id="bouton_quitter" mnemonicParsing="false" text="Quitter" />
+            <MenuItem fx:id="bouton_modeSimple" onAction="#changeToBase" mnemonicParsing="false" text="Mode simple" />
+            <MenuItem fx:id="bouton_quitter" onAction="#quitter" mnemonicParsing="false" text="Quitter" />
         </items>
       </MenuButton>
    </children>

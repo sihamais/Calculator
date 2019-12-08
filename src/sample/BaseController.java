@@ -102,9 +102,12 @@ public class BaseController implements Initializable {
     public MenuItem bouton_quitter;
 
 
-    protected double result;
-    protected double nombre_temp1;
-    protected double nombre_temp2;
+    protected Double result_float;
+    protected Integer result_int;
+    protected Double nbre_float1;
+    protected Double nbre_float2;
+    protected Integer nbre_int1;
+    protected Integer nbre_int2;
     protected String operateur;
     Boolean status_champ = false;
 
@@ -290,28 +293,43 @@ public class BaseController implements Initializable {
             if (!status_champ) {
                 if (champ_view.getText() == "")
                     champ_view.setText("0,");
-                else
-                    champ_view.setText((champ_view.getText() + ","));
-            } else {
+                else {
+                    String temp = champ_view.getText();
+                    temp += ",";
+                    champ_view.setText(temp);
+                }
+            }
+            else {
                 if (champ_view.getText() == "")
                     champ_view.setText("0,");
                 else
-                {champ_view.setText((champ_view.getText() + ",")); status_champ=false;}
+                {
+                    String temp = champ_view.getText();
+                    temp += ",";
+                    champ_view.setText(temp);
+                    status_champ=false;
+                }
             }
         }
     }
 
     @FXML
     public void bouton_mult_click() {
-        nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
-        operateur = "*";
-        historique_view.setText(champ_view.getText()+operateur);
-        champ_view.setText("");
+        try {
+            nbre_float1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
+            nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
+            operateur = "*";
+            //historique_view.setText(champ_view.getText()+operateur);
+            champ_view.setText("");
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
     public void bouton_add_click() {
        try {
-           nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
+           nbre_float1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
+           nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
            operateur = "+";
            champ_view.setText("");
        }catch (NumberFormatException e){
@@ -322,16 +340,26 @@ public class BaseController implements Initializable {
 
     @FXML
     public void bouton_div_click() {
-        nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
-        operateur = "/";
-        champ_view.setText("");
+        try {
+            nbre_float1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
+            nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
+            operateur = "/";
+            champ_view.setText("");
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void bouton_minus_click() {
-        nombre_temp1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
-        operateur = "-";
-        champ_view.setText("");
+        try {
+            nbre_float1 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
+            nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
+            operateur = "-";
+            champ_view.setText("");
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -340,6 +368,7 @@ public class BaseController implements Initializable {
         if (event.getSource() == clear) {
             champ_view.setPromptText("0");
             champ_view.setText("");
+            historique_view.setText("");
         }
     }
 
@@ -386,34 +415,125 @@ public class BaseController implements Initializable {
     }
 
     @FXML
-    public void bouton_equal_click() {
-        nombre_temp2 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
+    public void bouton_equal_click() throws NullPointerException, NumberFormatException {
+        nbre_float2 = Double.parseDouble(champ_view.getText().replaceAll(",","."));
+        nbre_int2 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
         switch (operateur)
         {
             case "+":
-                result = nombre_temp1 + nombre_temp2;
-                champ_view.setText(String.valueOf(result));
+                result_float = nbre_float1 + nbre_float2;
+                result_int = nbre_int1 + nbre_int2;
+                if(result_float == result_int.doubleValue()) {
+                    champ_view.setText(String.valueOf(result_int));
+                    String hist = nbre_int1.toString();
+                    hist += "+";
+                    hist += nbre_int2.toString();
+                    hist += "=";
+                    hist += result_int.toString();
+                    historique_view.setText(hist);
+                    nbre_int1 = 0;
+                    nbre_int2 = 0;
+                } else {
+                    champ_view.setText(String.valueOf(result_float));
+                    String hist = nbre_float1.toString();
+                    hist += "+";
+                    hist += nbre_float2.toString();
+                    hist += "=";
+                    hist += result_float.toString();
+                    historique_view.setText(hist);
+                    nbre_float1 = 0.0;
+                    nbre_float2 = 0.0;
+                }
+
                 status_champ = true;
                 break;
 
             case "-":
-                result = nombre_temp1 - nombre_temp2;
-                champ_view.setText(String.valueOf(result));
-                status_champ = true;
+                result_float = nbre_float1 - nbre_float2;
+                result_int = nbre_int1 - nbre_int2;
+                if(result_float == result_int.doubleValue()) {
+                    champ_view.setText(String.valueOf(result_int));
+                    String hist = nbre_int1.toString();
+                    hist += "-";
+                    hist += nbre_int2.toString();
+                    hist += "=";
+                    hist += result_int.toString();
+                    historique_view.setText(hist);
+                    nbre_int1 = 0;
+                    nbre_int2 = 0;
+                } else {
+                    champ_view.setText(String.valueOf(result_float));
+                    String hist = nbre_float1.toString();
+                    hist += "-";
+                    hist += nbre_float2.toString();
+                    hist += "=";
+                    hist += result_float.toString();
+                    historique_view.setText(hist);
+                    nbre_float1 = 0.0;
+                    nbre_float2 = 0.0;
+                }
                 break;
 
             case "*":
-                result = nombre_temp1 * nombre_temp2;
-                champ_view.setText(String.valueOf(result));
-                historique_view.setText("="+champ_view.getText());
+                result_float = nbre_float1 * nbre_float2;
+                result_int = nbre_int1 * nbre_int2;
+                if(result_float == result_int.doubleValue()) {
+                    champ_view.setText(String.valueOf(result_int));
+                    String hist = nbre_int1.toString();
+                    hist += "*";
+                    hist += nbre_int2.toString();
+                    hist += "=";
+                    hist += result_int.toString();
+                    historique_view.setText(hist);
+                    nbre_int1 = 0;
+                    nbre_int2 = 0;
+                } else {
+                    champ_view.setText(String.valueOf(result_float));
+                    String hist = nbre_float1.toString();
+                    hist += "*";
+                    hist += nbre_float2.toString();
+                    hist += "=";
+                    hist += result_float.toString();
+                    historique_view.setText(hist);
+                    nbre_float1 = 0.0;
+                    nbre_float2 = 0.0;
+                }
+
                 status_champ = true;
                 break;
 
             case "/":
-                result = nombre_temp1 / nombre_temp2;
-                champ_view.setText(String.valueOf(result));
+                result_float = nbre_float1 / nbre_float2;
+                result_int = nbre_int1 / nbre_int2;
+                if(result_float == result_int.doubleValue()) {
+                    champ_view.setText(String.valueOf(result_int));
+                    String hist = nbre_int1.toString();
+                    hist += "/";
+                    hist += nbre_int2.toString();
+                    hist += "=";
+                    hist += result_int.toString();
+                    historique_view.setText(hist);
+                    nbre_int1 = 0;
+                    nbre_int2 = 0;
+                } else {
+                    champ_view.setText(String.valueOf(result_float));
+                    String hist = nbre_float1.toString();
+                    hist += "/";
+                    hist += nbre_float2.toString();
+                    hist += "=";
+                    hist += result_float.toString();
+                    historique_view.setText(hist);
+                    nbre_float1 = 0.0;
+                    nbre_float2 = 0.0;
+                }
                 status_champ = true;
                 break;
+
+                default:
+                    if(nbre_int2==null || nbre_float2==null)
+                        throw new NullPointerException("Opérateur inconnu, ou second opérand non renseigné !");
+                    if(nbre_int1==null || nbre_float1==null)
+                        throw new NumberFormatException("Opérateur inconnu, ou second opérand non renseigné !");
         }
     }
 
@@ -443,7 +563,7 @@ public class BaseController implements Initializable {
 
     @FXML
     public void changeToScientifque(ActionEvent e) throws IOException {
-        Parent mode_scientifique = FXMLLoader.load(getClass().getResource("Scientifique.fxml"));
+        Parent mode_scientifique = FXMLLoader.load(getClass().getResource("Scientifique(new).fxml"));
         Stage stage_scientique = new Stage();
         stage_scientique.setTitle("Calculatrice (Mode Scientifique)");
         stage_scientique.setResizable(false);
@@ -460,10 +580,8 @@ public class BaseController implements Initializable {
                         @Override
                         public void run() {
                             stage_scientique.showAndWait();
-
                         }
                     });
-
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
