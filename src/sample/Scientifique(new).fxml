@@ -125,7 +125,7 @@
                         <Font name="Optima Regular" size="19.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="bouton_plusMoins" prefHeight="91.0" prefWidth="176.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #747477;" text="+/-" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                <JFXButton fx:id="bouton_plusMoins" prefHeight="91.0" onAction="#bouton_plusMoins_click" prefWidth="176.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #747477;" text="+/-" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
                     <font>
                         <Font name="Optima Regular" size="19.0" />
                     </font>
@@ -196,7 +196,7 @@
         <MenuButton fx:id="bouton_menu" layoutY="1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #2E2E32;" text="Menu" textFill="WHITE">
             <items>
                 <MenuItem fx:id="bouton_modeSimple" onAction="#changeToBase" mnemonicParsing="false" text="Mode Simple" />
-                <MenuItem fx:id="bouton_modeProgrammeur"  mnemonicParsing="false" text="Mode Programmeur" />
+                <MenuItem fx:id="bouton_modeProgrammeur" onAction="#changeToProgrammer"  mnemonicParsing="false" text="Mode Programmeur" />
                 <MenuItem fx:id="bouton_quitter" onAction="#quitter" mnemonicParsing="false" text="Quitter" />
             </items>
         </MenuButton>

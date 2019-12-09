@@ -109,7 +109,8 @@ public class BaseController implements Initializable {
     protected Integer nbre_int1;
     protected Integer nbre_int2;
     protected String operateur;
-    Boolean status_champ = false;
+    protected String hist;
+    protected Boolean status_champ = false;
 
 
     @FXML
@@ -274,6 +275,22 @@ public class BaseController implements Initializable {
     }
 
     @FXML
+    public void bouton_plusMoins_click(ActionEvent event) {
+
+        if (event.getSource() == bouton_plusMoins) {
+            champ_view.setPromptText("");
+            if(!status_champ)
+                champ_view.setText(("-" + champ_view.getText()));
+            else
+            {
+                champ_view.setText("-");
+                status_champ = false;
+            }
+        }
+    }
+
+
+    @FXML
     public void bouton_zero_click(ActionEvent event) {
 
         if (event.getSource() == bouton_zero) {
@@ -425,7 +442,7 @@ public class BaseController implements Initializable {
                 result_int = nbre_int1 + nbre_int2;
                 if(result_float == result_int.doubleValue()) {
                     champ_view.setText(String.valueOf(result_int));
-                    String hist = nbre_int1.toString();
+                    hist = nbre_int1.toString();
                     hist += "+";
                     hist += nbre_int2.toString();
                     hist += "=";
@@ -435,7 +452,7 @@ public class BaseController implements Initializable {
                     nbre_int2 = 0;
                 } else {
                     champ_view.setText(String.valueOf(result_float));
-                    String hist = nbre_float1.toString();
+                    hist = nbre_float1.toString();
                     hist += "+";
                     hist += nbre_float2.toString();
                     hist += "=";
@@ -453,7 +470,7 @@ public class BaseController implements Initializable {
                 result_int = nbre_int1 - nbre_int2;
                 if(result_float == result_int.doubleValue()) {
                     champ_view.setText(String.valueOf(result_int));
-                    String hist = nbre_int1.toString();
+                    hist = nbre_int1.toString();
                     hist += "-";
                     hist += nbre_int2.toString();
                     hist += "=";
@@ -463,7 +480,7 @@ public class BaseController implements Initializable {
                     nbre_int2 = 0;
                 } else {
                     champ_view.setText(String.valueOf(result_float));
-                    String hist = nbre_float1.toString();
+                    hist = nbre_float1.toString();
                     hist += "-";
                     hist += nbre_float2.toString();
                     hist += "=";
@@ -479,7 +496,7 @@ public class BaseController implements Initializable {
                 result_int = nbre_int1 * nbre_int2;
                 if(result_float == result_int.doubleValue()) {
                     champ_view.setText(String.valueOf(result_int));
-                    String hist = nbre_int1.toString();
+                    hist = nbre_int1.toString();
                     hist += "*";
                     hist += nbre_int2.toString();
                     hist += "=";
@@ -489,7 +506,7 @@ public class BaseController implements Initializable {
                     nbre_int2 = 0;
                 } else {
                     champ_view.setText(String.valueOf(result_float));
-                    String hist = nbre_float1.toString();
+                    hist = nbre_float1.toString();
                     hist += "*";
                     hist += nbre_float2.toString();
                     hist += "=";
@@ -507,7 +524,7 @@ public class BaseController implements Initializable {
                 result_int = nbre_int1 / nbre_int2;
                 if(result_float == result_int.doubleValue()) {
                     champ_view.setText(String.valueOf(result_int));
-                    String hist = nbre_int1.toString();
+                    hist = nbre_int1.toString();
                     hist += "/";
                     hist += nbre_int2.toString();
                     hist += "=";
@@ -517,7 +534,7 @@ public class BaseController implements Initializable {
                     nbre_int2 = 0;
                 } else {
                     champ_view.setText(String.valueOf(result_float));
-                    String hist = nbre_float1.toString();
+                    hist = nbre_float1.toString();
                     hist += "/";
                     hist += nbre_float2.toString();
                     hist += "=";
@@ -526,51 +543,32 @@ public class BaseController implements Initializable {
                     nbre_float1 = 0.0;
                     nbre_float2 = 0.0;
                 }
+                nbre_int1 = 0;
+                nbre_int2 = 0;
+                nbre_float1 = 0.0;
+                nbre_float2 = 0.0;
                 status_champ = true;
                 break;
 
-                default:
-                    if(nbre_int2==null || nbre_float2==null)
-                        throw new NullPointerException("Opérateur inconnu, ou second opérand non renseigné !");
-                    if(nbre_int1==null || nbre_float1==null)
-                        throw new NumberFormatException("Opérateur inconnu, ou second opérand non renseigné !");
+//                default:
+//                    if(nbre_int2==null || nbre_float2==null)
+//                        throw new NullPointerException("Opérateur inconnu, ou second opérand non renseigné !");
+//                    if(nbre_int1==null || nbre_float1==null)
+//                        throw new NumberFormatException("Opérateur inconnu, ou second opérand non renseigné !");
         }
     }
-
-//    //lanceur principal
-//    @Override
-//    public void start(Stage primaryStage) throws Exception {
-//
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(1000);
-//                    Platform.runLater(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            stage_scientique.show();
-//                        }
-//                    });
-//
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }).start();
-//    }
 
 
     @FXML
     public void changeToScientifque(ActionEvent e) throws IOException {
-        Parent mode_scientifique = FXMLLoader.load(getClass().getResource("Scientifique(new).fxml"));
-        Stage stage_scientique = new Stage();
-        stage_scientique.setTitle("Calculatrice (Mode Scientifique)");
-        stage_scientique.setResizable(false);
-        stage_scientique.centerOnScreen();
-        stage_scientique.setScene(new Scene(mode_scientifique));
+        Parent mode_scientifique= FXMLLoader.load(getClass().getResource("Scientifique(new).fxml"));
+        Stage stage_scientifique = new Stage();
+        stage_scientifique.setTitle("Calculatrice (Mode Scientifique)");
+        stage_scientifique.setResizable(false);
+        stage_scientifique.centerOnScreen();
+        stage_scientifique.setScene(new Scene(mode_scientifique));
 
-        // stage_scientique.show();
+        // stage_programmeur.show();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -579,7 +577,37 @@ public class BaseController implements Initializable {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            stage_scientique.showAndWait();
+                            stage_scientifique.showAndWait();
+                        }
+                    });
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }).start();
+
+    }
+
+    @FXML
+    public void changeToProgrammeur(ActionEvent e) throws IOException {
+        Parent mode_programmeur = FXMLLoader.load(getClass().getResource("Programmeur.fxml"));
+        Stage stage_programmeur = new Stage();
+        stage_programmeur.setTitle("Calculatrice (Mode Programmeur)");
+        stage_programmeur.setResizable(false);
+        stage_programmeur.centerOnScreen();
+        stage_programmeur.setScene(new Scene(mode_programmeur));
+
+        // stage_programmeur.show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(100);
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            stage_programmeur.showAndWait();
                         }
                     });
                 } catch (InterruptedException e) {

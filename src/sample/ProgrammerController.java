@@ -174,7 +174,8 @@ public class ProgrammerController extends BaseController {
     @FXML
     public void bouton_and_click() {
         try {
-            nbre_float1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
+            nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
+            nbre_int1 = nbre_int1.intValue();
             operateur = "and";
             champ_view.setText("");
         }catch (NumberFormatException e){
@@ -185,7 +186,7 @@ public class ProgrammerController extends BaseController {
     @FXML
     public void bouton_or_click() {
         try {
-            nbre_float1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
+            nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
             operateur = "or";
             champ_view.setText("");
         }catch (NumberFormatException e){
@@ -207,19 +208,19 @@ public class ProgrammerController extends BaseController {
                 }catch (Exception e){
                     e.getMessage();
                 }
-                String result = Integer.toBinaryString(-valeur_num);
+                String result_int = Integer.toBinaryString(-valeur_num);
 
                 if (decimal_active) {
                     champ_view.setText(String.valueOf(-valeur_num));
                     status_champ = true;
                 } else if (bin_active) {
-                    champ_view.setText(String.valueOf(Integer.parseInt(result, 2)));
+                    champ_view.setText(Integer.toBinaryString(-valeur_num));
                     status_champ = true;
                 } else if (octal_active) {
-                    champ_view.setText(String.valueOf(Integer.parseInt(result, 8)));
+                    champ_view.setText(Integer.toOctalString(-valeur_num));
                     status_champ = true;
                 } else if (hexa_active) {
-                    champ_view.setText(String.valueOf(Integer.parseInt(result, 16)));
+                    champ_view.setText(Integer.toHexString(-valeur_num));
                     status_champ = true;
                 }
             }
@@ -229,7 +230,7 @@ public class ProgrammerController extends BaseController {
     @FXML
     public void bouton_xor_click() {
         try {
-            nbre_float1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
+            nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."));
             operateur = "xor";
             champ_view.setText("");
         }catch (NumberFormatException e){
@@ -303,7 +304,7 @@ public class ProgrammerController extends BaseController {
 
     @FXML
     public void bouton_xpy_click(ActionEvent event) {
-        nbre_float1 = Integer.valueOf(champ_view.getText());
+        nbre_int1 = Integer.valueOf(champ_view.getText());
         operateur = "xpy";
         champ_view.setText("");
     }
@@ -577,7 +578,7 @@ public class ProgrammerController extends BaseController {
 
     @FXML
     public void bouton_mult_click(){
-        nbre_float1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),10);
+        nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),10);
         operateur = "*";
         champ_view.setText("");
     }
@@ -585,10 +586,8 @@ public class ProgrammerController extends BaseController {
     @FXML
     public void bouton_add_click() {
         try {
-            nbre_float1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),10);
+            nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),2);
             operateur = "+";
-            historique = historique + champ_view.getText() + operateur;
-            historique_view.setText(historique);
             champ_view.setText("");
         }catch (NumberFormatException e){
             e.getMessage();
@@ -597,207 +596,212 @@ public class ProgrammerController extends BaseController {
 
     @FXML
     public void bouton_div_click() {
-        nbre_float1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),10);
+        nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),10);
         operateur = "/";
-        historique = historique + champ_view.getText() + operateur;
-        historique_view.setText(historique);
         champ_view.setText("");
     }
 
     @FXML
     public void bouton_minus_click() {
-        nbre_float1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),10);
+        nbre_int1 = Integer.parseInt(champ_view.getText().replaceAll(",","."),10);
         operateur = "-";
-        historique = historique + champ_view.getText() + operateur;
-        historique_view.setText(historique);
         champ_view.setText("");
+    }
+
+    public static int Addition(int a, int b) {
+        int carry = a & b;
+        int r = a ^ b;
+        while(carry != 0) {
+            int shiftCarry = carry << 1;
+            carry = r & shiftCarry;
+            r ^= shiftCarry;
+        }
+        return r;
     }
 
     @FXML
     public void bouton_equal_click() {
-        nbre_float2 = Integer.parseInt(champ_view.getText(),10);
+        nbre_int2 = Integer.parseInt(champ_view.getText(),2);
         switch (operateur)
         {
             case "+":
-                result = nbre_float1 + nbre_float2;
+                int r;
+                r = Addition(nbre_int1,nbre_int2);
+                String result = Integer.toBinaryString(r);
                 if (decimal_active) {
                     champ_view.setText(String.valueOf(result));
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    String result_int_string = String.valueOf(result);
+                    champ_view.setText(String.valueOf(Integer.toBinaryString(r)));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    String result_int_string = String.valueOf(result);
+                    champ_view.setText(String.valueOf(Integer.toOctalString(r)));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.toHexString(r)));
                     status_champ = true;
                 }
                 break;
 
             case "-":
-                result = nbre_float1 - nbre_float2;
+                result_int = nbre_int1 - nbre_int2;
                 if (decimal_active) {
-                    champ_view.setText(String.valueOf(result));
+                    champ_view.setText(String.valueOf(result_int));
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,2)));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,8)));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,16)));
                     status_champ = true;
                 }
                 break;
 
             case "*":
-                result = nbre_float1 * nbre_float2;
+                result_int = nbre_int1 * nbre_int2;
                 if (decimal_active) {
-                    champ_view.setText(String.valueOf(result));
+                    champ_view.setText(String.valueOf(result_int));
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,2)));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,8)));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,16)));
                     status_champ = true;
                 }
                 break;
 
             case "/":
-                result = nbre_float1 / nbre_float2;
+                result_int = nbre_int1 / nbre_int2;
                 if (decimal_active) {
-                    champ_view.setText(String.valueOf(result));
+                    champ_view.setText(String.valueOf(result_int));
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,2)));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,8)));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    String result_int_string = String.valueOf(result_int);
+                    champ_view.setText(String.valueOf(Integer.parseInt(result_int_string,16)));
                     status_champ = true;
                 }
                 break;
 
             case "xpy":
-                result = Math.pow(nbre_float1,nbre_float2);
+                result_float = Math.pow(nbre_int1,nbre_int2);
+                result_int = result_float.intValue();
                 if (decimal_active) {
-                    champ_view.setText(String.valueOf(result));
+                    champ_view.setText(String.valueOf(result_int));
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    champ_view.setText(Integer.toBinaryString(result_int));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    champ_view.setText(Integer.toOctalString(result_int));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    champ_view.setText(Integer.toHexString(result_int));
                     status_champ = true;
                 }
                 break;
 
             case "and":
-                String result = Integer.toBinaryString((int)nbre_float1 & (int)nbre_float2);
+                String result_int = Integer.toBinaryString(nbre_int1 & nbre_int2);
                 if (decimal_active) {
-                    champ_view.setText(String.valueOf(result));
+                    champ_view.setText(result_int);
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    champ_view.setText(String.valueOf(Integer.toBinaryString(nbre_int1 & nbre_int2)));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    champ_view.setText(String.valueOf(Integer.toOctalString(nbre_int1 & nbre_int2)));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    String result_int_string = result_int;
+                    champ_view.setText(String.valueOf(Integer.toHexString(nbre_int1 & nbre_int2)));
                     status_champ = true;
                 }
                 break;
 
             case "or":
-                String result1 = Integer.toBinaryString((int)nbre_float1 | (int)nbre_float2);
+                String result_int1 = Integer.toBinaryString(nbre_int1 | nbre_int2);
                 if (decimal_active) {
-                    champ_view.setText(String.valueOf(result1));
+                    champ_view.setText(result_int1);
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result1);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    String result_int_string = result_int1;
+                    champ_view.setText(String.valueOf(Integer.toBinaryString(nbre_int1 | nbre_int2)));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result1);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    String result_int_string = result_int1;
+                    champ_view.setText(String.valueOf(Integer.toOctalString(nbre_int1 | nbre_int2)));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result1);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    String result_int_string = result_int1;
+                    champ_view.setText(String.valueOf(Integer.toHexString(nbre_int1 | nbre_int2)));
                     status_champ = true;
                 }
                 break;
 
             case "xor":
-                String result2 = Integer.toBinaryString((int)nbre_float1 ^ (int)nbre_float2);
+                String result_int2 = Integer.toBinaryString(nbre_int1 ^ nbre_int2);
                 if (decimal_active) {
-                    champ_view.setText(String.valueOf(result2));
+                    champ_view.setText(result_int2);
                     status_champ = true;
                 }
                 else if(bin_active){
-                    String result_string = String.valueOf(result2);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,2)));
+                    String result_int_string = result_int2;
+                    champ_view.setText(String.valueOf(Integer.toBinaryString(nbre_int1 ^ nbre_int2)));
                     status_champ = true;
                 }
                 else if(octal_active){
-                    String result_string = String.valueOf(result2);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,8)));
+                    String result_int_string = result_int2;
+                    champ_view.setText(String.valueOf(Integer.toOctalString(nbre_int1 ^ nbre_int2)));
                     status_champ = true;
                 }
                 else if(hexa_active){
-                    String result_string = String.valueOf(result2);
-                    champ_view.setText(String.valueOf(Integer.parseInt(result_string,16)));
+                    String result_int_string = result_int2;
+                    champ_view.setText(String.valueOf(Integer.toHexString(nbre_int1 ^ nbre_int2)));
                     status_champ = true;
                 }
                 break;

@@ -123,28 +123,14 @@
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_plusMoins" prefHeight="148.0" prefWidth="113.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #747477;" text="+/-" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <JFXButton fx:id="bouton_plusMoins" onAction="#bouton_plusMoins_click" prefHeight="148.0" prefWidth="113.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #747477;" text="+/-" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
          </children>
       </GridPane>
-      <ToolBar prefHeight="4.0" prefWidth="225.0" style="-fx-background-color: #2E2E32;">
-         <items>
-            <JFXButton buttonType="RAISED" prefHeight="0.0" prefWidth="19.0" style="-fx-background-color: #FF3433;" text="X" textFill="#6f0000">
-               <font>
-                  <Font size="9.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #00D72B;" text="―" textFill="#004313">
-               <font>
-                  <Font name="System Bold" size="9.0" />
-               </font>
-            </JFXButton>
-         </items>
-      </ToolBar>
-      <TextField editable="false" fx:id="champ_view" alignment="BASELINE_RIGHT" layoutX="6.0" layoutY="101.0" prefHeight="76.0" prefWidth="442.0" promptText="0" style="-fx-background-color: #2E2E32; -fx-text-inner-color: white;">
+       <TextField editable="false" fx:id="champ_view" alignment="BASELINE_RIGHT" layoutX="6.0" layoutY="101.0" prefHeight="76.0" prefWidth="442.0" promptText="0" style="-fx-background-color: #2E2E32; -fx-text-inner-color: white;">
          <font>
             <Font name="Heiti TC Light" size="33.0" />
          </font>
@@ -156,7 +142,8 @@
       </TextField>
       <MenuButton fx:id="bouton_menu" layoutY="1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #2E2E32;" text="Menu" textFill="WHITE">
          <items>
-            <MenuItem fx:id="bouton_modeScientifique" onAction="#changeToScientifque" mnemonicParsing="false" text="Mode scientifique" />
+            <MenuItem fx:id="bouton_modeScientifique" onAction="#changeToScientifque" mnemonicParsing="false" text="Mode Scientifique" />
+            <MenuItem fx:id="bouton_modeProgrammeur" onAction="#changeToProgrammeur" mnemonicParsing="false" text="Mode Programmeur" />
             <MenuItem fx:id="bouton_quitter" mnemonicParsing="false" text="Quitter"  onAction="#quitter"/>
          </items>
       </MenuButton>

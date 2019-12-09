@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Calculatrice (Andi &amp; Siham)">
+    <output-path>$PROJECT_DIR$/out/artifacts/Calculatrice__Andi___Siham_</output-path>
+    <root id="root">
+      <element id="archive" name="Calculatrice.jar">
+        <element id="module-output" name="Calculatrice" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/sample/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

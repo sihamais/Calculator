@@ -56,7 +56,7 @@
                   <Font name="Optima Regular" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bouton_eight" onAction="#bouton_eight_click" prefHeight="139.0" prefWidth="172.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #747477;" text="8" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <JFXButton fx:id="bouton_eight" onAction="#bouton_height_click" prefHeight="139.0" prefWidth="172.0" ripplerFill="BLACK" style="-fx-alignment: center; -fx-background-color: #747477;" text="8" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <font>
                   <Font name="Optima Regular" size="19.0" />
                </font>
